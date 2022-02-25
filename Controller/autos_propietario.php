@@ -39,7 +39,7 @@ class Autos_Propietario{
                 INNER JOIN tbl_auto ta ON ta.id =tvp.id_vehiculo  
                 INNER JOIN tbl_marca tm ON tvp.id_marca =tm.id
                 INNER JOIN tbl_propietario tp ON tp.id=tvp.id_propietario  
-                WHERE LOWER(tp.nombre) LIKE '%".$this->nombre."%' ORDER BY ta.placa ASC"; 
+                WHERE LOWER(tp.nombre) LIKE '%".strtolower($this->nombre)."%' ORDER BY ta.placa ASC"; 
             }else{
                 $query="SELECT tp.nombre  AS nombre ,ta.placa AS placa, ta.color AS color, tm.marca AS marca 
                 FROM tbl_vehiculo_propietario tvp 

@@ -34,7 +34,7 @@ $itemCount = $items->rowCount();
             );
             array_push($prop["body"], $e);
         }
-        echo ($prop);
+        echo json_encode($prop);
     }
     else{
         http_response_code(404);
