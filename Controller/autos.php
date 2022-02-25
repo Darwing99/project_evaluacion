@@ -25,6 +25,12 @@ class Autos extends Autos_Propietario{
     
        }
 
+       public function obtenerId(){
+        $query="SELECT max( id )+1 as id FROM ".$this->table."";
+        $res_id=$this->conn->prepare($query);
+        return $res_id; 
+       }
+
     public function setData($sqlQuery){
         $result = $this->conn->prepare($sqlQuery);
 
@@ -60,15 +66,22 @@ class Autos extends Autos_Propietario{
        
 
         $result=$this->setData($sqlQuery);
-        if($result->execute()){
-            $query="INSERT INTO ".$this->table_autos_detalle."( id_modelo,id_tipo,id_marca,
-            id_vehiculo,id_propietario) 
-            VALUES(".$this->id_modelo.",".$this->id_tipo.",
-            ".$this->id_marca.",".$this->id_auto.",
-            ".$this->id_propietario.")";
-            $result_final=$this->conn->prepare($query);
-           
+        $res=$this->obtenerId();
+        
+        if($res->execute()){
+            $row = $res->fetch(PDO::FETCH_ASSOC);
+            $this->id_auto=$row['id'];
+            if($result->execute()){
+                $query="INSERT INTO ".$this->table_autos_detalle."( id_modelo,id_tipo,id_marca,
+                id_vehiculo,id_propietario) 
+                VALUES(".$this->id_modelo.",".$this->id_tipo.",
+                ".$this->id_marca.",".$this->id_auto.",
+                ".$this->id_propietario.")";
+                $result_final=$this->conn->prepare($query);
+               
+            }
         }
+      
 
         return $result_final->execute()?true:false;
     

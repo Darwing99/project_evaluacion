@@ -21,7 +21,6 @@ try {
     $item->color = $data->color;
     $item->chasis =  $data->chasis;
     
-    $item->id_auto=$data->id_auto;
     $item->id_propietario=$data->id_propietario;
     $item->id_modelo=$data->id_modelo;
     $item->id_marca=$data->id_marca;
