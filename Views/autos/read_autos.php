@@ -18,7 +18,6 @@ $query="select*from tbl_auto";
 $items = $auto->obtenerDatos($query);
 $itemCount = $items->rowCount();
 
-    echo json_encode($itemCount);
     if($itemCount > 0){
         
         $prop = array();

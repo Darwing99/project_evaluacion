@@ -20,7 +20,7 @@ try {
 
 $itemCount = $auto->rowCount();
 
-    echo json_encode($itemCount);
+    
     if($itemCount > 0){
         
         $prop = array();

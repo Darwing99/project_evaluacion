@@ -18,12 +18,12 @@ $marcas = new Marcas($db);
 $items = $marcas->obtenerDatos();
 
 $itemCount = $items->rowCount();
-    echo json_encode($itemCount);
+
     if($itemCount > 0){
         
         $prop = array();
         $prop["body"] = array();
-        $prop["itemCount"] = $itemCount;
+       $prop["itemCount"] = $itemCount;
         while ($row = $items->fetch(PDO::FETCH_ASSOC)){
             extract($row);
             $e = array(
@@ -34,7 +34,7 @@ $itemCount = $items->rowCount();
             );
             array_push($prop["body"], $e);
         }
-        echo json_encode($prop);
+        echo ($prop);
     }
     else{
         http_response_code(404);

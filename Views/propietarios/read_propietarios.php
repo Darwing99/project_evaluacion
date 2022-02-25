@@ -15,7 +15,7 @@ $propietario = new Propietarios($db);
 $items = $propietario->obtenerDatos();
 
 $itemCount = $items->rowCount();
-    echo json_encode($itemCount);
+
     if($itemCount > 0){
         
         $prop = array();

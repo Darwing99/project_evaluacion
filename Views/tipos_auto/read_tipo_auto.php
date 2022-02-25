@@ -17,7 +17,7 @@ $tipoauto = new TipoAutos($db);
 $items = $tipoauto->obtenerDatos();
 
 $itemCount = $items->rowCount();
-    echo json_encode($itemCount);
+ 
     if($itemCount > 0){
         
         $prop = array();

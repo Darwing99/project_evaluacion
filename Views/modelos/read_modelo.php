@@ -18,7 +18,7 @@ $modelo = new Modelos($db);
 $items = $modelo->obtenerDatos();
 
 $itemCount = $items->rowCount();
-    echo json_encode($itemCount);
+    
     if($itemCount > 0){
         
         $prop = array();
