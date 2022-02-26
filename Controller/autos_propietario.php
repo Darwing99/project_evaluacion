@@ -19,8 +19,6 @@ class Autos_Propietario{
        
     }
 
-   
-
     public function obtenerDatos($sqlTipo){
 
         $result=$this->conn->prepare($sqlTipo);

@@ -1,0 +1,11 @@
+Options +FollowSymLinks
+Options All -Indexes
+Options -Indexes
+
+
+RewriteEngine on
+
+<files .htaccess>
+order allow,deny
+deny from all
+</files> 
