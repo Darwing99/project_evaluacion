@@ -22,7 +22,7 @@ https://137.184.224.36/project_evaluacion/Views/autos/read_autos.php
 
 3. Para obtener data de modelos de autos use:
 4. 
-http://137.184.224.36/project_evaluacion/Views/modelos/read_modelo.php
+https://137.184.224.36/project_evaluacion/Views/modelos/read_modelo.php
 
 ![image](https://user-images.githubusercontent.com/70980484/155825742-5926c6ce-1d67-4638-a805-76b847b050bd.png)
 
